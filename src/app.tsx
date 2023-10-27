@@ -1,8 +1,11 @@
-import type { PropsWithChildren, ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 import { Component } from 'react'
-import './app.scss'
 
-class App extends Component<PropsWithChildren<{ children: ReactNode }>> {
+// import './app.css'
+
+import './styles/tailwind.css'
+
+class App extends Component<PropsWithChildren<any>> {
   componentDidMount() { }
 
   componentDidShow() { }

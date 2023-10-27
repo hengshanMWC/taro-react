@@ -2,5 +2,9 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint”",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.rootFontSize": 32
 }

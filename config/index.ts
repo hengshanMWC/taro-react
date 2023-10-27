@@ -1,72 +1,93 @@
+import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
+
+const isH5 = process.env.TARO_ENV === 'h5'
+const isApp = process.env.TARO_ENV === 'rn'
+const WeappTailwindcssDisabled = isH5 || isApp
+
 const config = {
-  projectName: "react-taro2",
-  date: "2023-10-26",
+  projectName: 'react-taro2',
+  date: '2023-10-26',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
     828: 1.81 / 2,
   },
-  sourceRoot: "src",
-  outputRoot: "dist",
+  sourceRoot: 'src',
+  outputRoot: 'dist',
   plugins: [
-    "@taro-hooks/plugin-react"
+    '@taro-hooks/plugin-react',
   ],
   defineConstants: {},
   copy: {
     patterns: [],
     options: {},
   },
-  framework: "react",
+  framework: 'react',
   compiler: {
     type: 'webpack5',
   },
-    cache: {
-      enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
-    },
-      mini: {
-  postcss: {
-    pxtransform: {
-      enable: true,
+  cache: {
+    enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+  },
+  mini: {
+    postcss: {
+      pxtransform: {
+        enable: true,
         config: { },
-    },
-    url: {
-      enable: true,
+      },
+      url: {
+        enable: true,
         config: {
-        limit: 1024, // 设定转换尺寸上限
+          limit: 1024, // 设定转换尺寸上限
         },
-    },
-    cssModules: {
-      enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+      },
+      cssModules: {
+        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-        namingPattern: "module", // 转换模式，取值为 global/module
-          generateScopedName: "[name]__[local]___[hash:base64:5]",
+          namingPattern: 'module', // 转换模式，取值为 global/module
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
         },
+      },
+    },
+    webpackChain(chain) {
+      chain.merge({
+        plugin: {
+          install: {
+            plugin: UnifiedWebpackPluginV5,
+            args: [
+              {
+                appType: 'taro',
+                disabled: WeappTailwindcssDisabled,
+              },
+            ],
+          },
+        },
+      })
     },
   },
-},
-h5: {
-  publicPath: "/",
-    staticDirectory: "static",
-      postcss: {
-    autoprefixer: {
-      enable: true,
+  h5: {
+    publicPath: '/',
+    staticDirectory: 'static',
+    postcss: {
+      autoprefixer: {
+        enable: true,
         config: { },
-    },
-    cssModules: {
-      enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+      },
+      cssModules: {
+        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-        namingPattern: "module", // 转换模式，取值为 global/module
-          generateScopedName: "[name]__[local]___[hash:base64:5]",
+          namingPattern: 'module', // 转换模式，取值为 global/module
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
         },
+      },
     },
   },
-},
-};
+}
 
 module.exports = function (merge) {
-  if (process.env.NODE_ENV === "development") {
-    return merge({}, config, require("./dev"));
+  if (process.env.NODE_ENV === 'development') {
+    return merge({}, config, require('./dev'))
   }
-  return merge({}, config, require("./prod"));
-};
+  return merge({}, config, require('./prod'))
+}

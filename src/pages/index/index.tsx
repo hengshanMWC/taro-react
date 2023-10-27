@@ -1,9 +1,9 @@
 import { Button, Image, Text, View } from '@tarojs/components'
-import { useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { useEnv, useModal, useNavigationBar, useToast } from 'taro-hooks'
 import logo from './hook.png'
 
-import './index.scss'
+import './index.css'
 
 function Index() {
   const env = useEnv()
@@ -23,8 +23,8 @@ function Index() {
   }, [show, showModal])
 
   return (
-    <View className="wrapper">
-      <Image className="logo" src={logo} />
+    <View className="flex flex-col">
+      <Image className="block mt-0 mb-0 mr-auto ml-auto w-32 h-32" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
         目前覆盖70%官方API. 抹平部分API在H5端短板. 提供近40+Hooks!
