@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ESNext",
     "module": "commonjs",
     "removeComments": false,
     "preserveConstEnums": true,
@@ -16,13 +16,16 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "react-jsx",
-    "jsxFactory": "React.createElement",
     "allowJs": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true, // 如果需要与 CommonJS 模块互操作
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
     ]
   },
-  "include": ["./src", "./types"],
+  "include": [
+    "./src/**/*.{tsx,ts}",
+    "./types/*"
+  ],
   "compileOnSave": false
 }
