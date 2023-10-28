@@ -24,15 +24,15 @@ function Index() {
 
   return (
     <View className="flex flex-col">
-      <Image className="block mt-0 mb-0 mr-auto ml-auto w-32 h-32" src={logo} />
-      <Text className="title">为Taro而设计的Hooks Library</Text>
-      <Text className="desc">
+      <Image className="block my-0 mx-auto w-32 h-32" src={logo} />
+      <Text className="text-center text-base;">为Taro而设计的Hooks Library</Text>
+      <Text className="text-center text-sm text-black text-opacity-85 mt-[20rpx] mb-[20rpx]">
         目前覆盖70%官方API. 抹平部分API在H5端短板. 提供近40+Hooks!
         并结合ahook适配Taro! 更多信息可以查看新版文档: https://next-version-taro-hooks.vercel.app/
       </Text>
-      <View className="list">
-        <Text className="label">运行环境</Text>
-        <Text className="note">{env}</Text>
+      <View className="py-3 text-base flex items-center border-y border-cyan-950 border-solid">
+        <Text>运行环境：</Text>
+        <Text>{env}</Text>
       </View>
       <Button className="button" onClick={() => setTitle('Taro Hooks Nice!')}>
         设置标题
