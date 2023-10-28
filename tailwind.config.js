@@ -10,5 +10,5 @@ module.exports = {
     preflight: false,
   },
   // 样式嵌套
-  // important: true,
+  important: true,
 }
