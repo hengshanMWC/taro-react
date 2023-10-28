@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { Component } from 'react'
 
-// import './app.css'
+import './app.css'
 
 import './styles/tailwind.css'
 
