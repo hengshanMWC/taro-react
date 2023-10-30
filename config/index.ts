@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
 
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -17,6 +18,7 @@ const config = {
   outputRoot: 'dist',
   plugins: [
     '@taro-hooks/plugin-react',
+    '@tarojs/plugin-http',
   ],
   defineConstants: {},
   copy: {
@@ -29,6 +31,9 @@ const config = {
   },
   cache: {
     enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
   },
   mini: {
     postcss: {

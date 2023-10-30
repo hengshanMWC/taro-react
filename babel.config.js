@@ -10,14 +10,14 @@ module.exports = {
       },
     ],
   ],
-plugins: [
-  [
-    'import',
-    {
-      libraryName: 'taro-hooks',
-      camel2DashComponentName: false
-    },
-    'taro-hooks',
-  ]
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'taro-hooks',
+        camel2DashComponentName: false
+      },
+      'taro-hooks',
+    ]
 ],
 };

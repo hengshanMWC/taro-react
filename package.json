@@ -52,6 +52,7 @@
     "@tarojs/components": "3.6.18",
     "@tarojs/helper": "3.6.18",
     "@tarojs/plugin-framework-react": "3.6.18",
+    "@tarojs/plugin-http": "^3.6.18",
     "@tarojs/plugin-platform-alipay": "3.6.18",
     "@tarojs/plugin-platform-h5": "3.6.18",
     "@tarojs/plugin-platform-jd": "3.6.18",
@@ -63,9 +64,15 @@
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",
     "@tarojs/taro": "3.6.18",
+    "axios": "^1.6.0",
+    "err-code": "^3.0.1",
+    "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "taro-hooks": "2.0.7"
+    "taro-hooks": "2.0.7",
+    "taro-ui": "^3.1.1",
+    "ts-enum-util": "^4.0.2",
+    "zustand": "^4.4.4"
   },
   "devDependencies": {
     "@antfu/eslint-config-react": "^0.43.1",

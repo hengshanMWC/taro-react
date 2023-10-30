@@ -1,6 +1,5 @@
 module.exports = {
   extends: [
-    'taro/react',
     '@antfu/eslint-config-react'
   ],
   rules: {

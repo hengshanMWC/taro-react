@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2015",
     "module": "commonjs",
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",
@@ -15,16 +14,18 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
     "esModuleInterop": true, // 如果需要与 CommonJS 模块互操作
-    "typeRoots": [
-      "node_modules/@types",
-    ]
   },
   "include": [
-    "./src/**/*.{tsx,ts}",
+    "src",
     "./types/*"
   ],
   "compileOnSave": false
