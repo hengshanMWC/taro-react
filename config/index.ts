@@ -17,8 +17,8 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [
-    '@taro-hooks/plugin-react',
     '@tarojs/plugin-http',
+    '@taro-hooks/plugin-react',
   ],
   defineConstants: {},
   copy: {
